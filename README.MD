@@ -15,11 +15,7 @@ pubsub 8080
 
 ## Notes
 ### SubscriberGroup
-This type was designed with an Actor-based model in mind, as would be found in Erlang. The struct is nothing more
-than a container for the Go channels that form the message queue of the Actor, itself a simple goroutine.
+This type was designed with an Actor-based model in mind, as would be found in Erlang. The struct is nothing more than a container for the Go channels that form the message queue of the Actor, itself a simple goroutine.
 
 ### Scalability
-Currently, the server uses a single collection of subscribers, leading to potentially degraded performance when 
-publishing to a large number of subscribers. However, this can be alleviated by using multiple SubscriberGroups 
-and keeping their number of subscribers balanced. This would allow to parallelize publishing by using a different 
-goroutine for each group.
+Currently, the server uses a single collection of subscribers, leading to potentially degraded performance when publishing to a large number of subscribers. However, this can be alleviated by using multiple SubscriberGroups and keeping their number of subscribers balanced. This would allow to parallelize publishing by using a different goroutine for each group.
